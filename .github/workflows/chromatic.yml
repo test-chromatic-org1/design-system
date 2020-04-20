@@ -1,4 +1,4 @@
-name: 'Chromatic'
+name: 'Chromatic staging'
 on: push
 
 jobs:
@@ -13,6 +13,8 @@ jobs:
       - run: |
           yarn build-storybook
       - uses: chromaui/action@v1
+        env:
+          CHROMATIC_INDEX_URL: https://staging-www.chromaticqa.com
         with:
           appCode: 833sh415z3p
           token: ${{ secrets.GITHUB_TOKEN }}
