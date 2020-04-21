@@ -1,21 +1,21 @@
-name: "Chromatic"
-on:
-  push
+name: 'Chromatic staging'
+on: push
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - run: |
-        yarn
-    - run: |
-        yarn build
-    - run: |
-        yarn build-storybook
-    - uses: chromaui/action@v1
-      with: 
-        appCode: 9ofhn0iql7n
-        token: ${{ secrets.GITHUB_TOKEN }}
-        storybookBuildDir: storybook-static
-        
+      - uses: actions/checkout@v1
+      - run: |
+          yarn
+      - run: |
+          yarn build
+      - run: |
+          yarn build-storybook
+      - uses: chromaui/action@v1
+        env:
+          CHROMATIC_INDEX_URL: https://staging-www.chromaticqa.com
+        with:
+          appCode: 833sh415z3p
+          token: ${{ secrets.GITHUB_TOKEN }}
+          storybookBuildDir: storybook-static

@@ -14,6 +14,7 @@ export const color = {
   primary: 'purple', // coral
   secondary: '#1EA7FD', // ocean
   tertiary: '#DDDDDD',
+  quadrary: 'blue',
 
   orange: '#FC521F',
   gold: '#FFAE00',
